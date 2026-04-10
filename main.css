@@ -435,3 +435,7 @@ footer {
         text-align: center;
     }
 }
+
+#temp{
+    background-image: "res/temo.jpg";
+}
