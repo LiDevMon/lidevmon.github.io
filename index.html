@@ -3,277 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Liza Quant · Engineer & Developer</title>
-    <!-- Google Fonts + Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
+    <title>Портфолио</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="glass-header">
-        <div class="container">
-            <div class="nav-bar">
-                <div class="logo">Димончик</div>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#achievements">Achievements</a>
-                    <a href="#contact">Contact</a>
-                    <button class="theme-toggle" id="darkmode-toggle" aria-label="Dark mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
+<div class="pass-container">
+    <!-- header as pass strip -->
+    <div class="nav-pass">
+        <div class="logo-pass">⌵ LIZA QUANT ⌵</div>
+        <div class="nav-links-pass">
+            <a href="#about-pass">About</a>
+            <a href="#projects-pass">Projects</a>
+            <a href="#achievements-pass">Achievements</a>
+            <a href="#contact-pass">Contact</a>
+            <button class="theme-toggle-pass" id="darkTogglePass"><i class="fas fa-moon"></i></button>
+        </div>
+    </div>
+
+    <!-- HERO — main pass card -->
+    <div class="pass-card fade-up-pass" id="hero-pass">
+        <div class="hero-pass">
+            <div class="hero-left">
+                <div class="hero-tag">✦ EVENT PASS // TECH LEAD ✦</div>
+                <h1>Liza Quant</h1>
+                <div style="font-weight: 500; color: var(--accent); margin: 0.25rem 0;">Engineer / Developer / Researcher</div>
+                <div class="hero-slogan-pass">[ signal processing · embedded AI · low‑latency systems ]<br>building the bridge between hardware intelligence and real‑world data.</div>
+                <div class="btn-group" style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                    <a href="#projects-pass" class="btn-pass">🎟️ Мои проекты</a>
+                    <a href="#contact-pass" class="btn-outline-pass">📩 Связаться</a>
+                </div>
+            </div>
+            <div class="qr-mock">
+                <i class="fas fa-qrcode"></i>
+                <span>SCAN / PASS</span>
+                <span style="font-size: 8px;">LQ#2407</span>
+            </div>
+        </div>
+        <div class="barcode-sim" style="margin-top: 1.2rem;"></div>
+    </div>
+
+    <!-- About card (pass style) -->
+    <div class="pass-card fade-up-pass" id="about-pass">
+        <div class="section-title-pass">📇 About / Credentials</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+            <div style="flex:2">
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">R&D engineer with 6+ years in <strong>embedded electronics, real‑time analytics, and full‑cycle development</strong>. I architect systems from sensor to cloud — with obsession for precision and low latency.</p>
+                <p style="color: var(--text-muted);">Currently deep into edge AI pipelines and biomedical signal research. Open for speaking, collaborations & consulting.</p>
+            </div>
+            <div style="flex:1.5">
+                <div class="badge-list">
+                    <span class="role-badge"><i class="fas fa-microchip"></i> Embedded</span>
+                    <span class="role-badge"><i class="fas fa-chart-line"></i> Signal analysis</span>
+                    <span class="role-badge"><i class="fas fa-code"></i> Python/C++</span>
+                    <span class="role-badge"><i class="fas fa-waveform"></i> DSP</span>
+                    <span class="role-badge"><i class="fas fa-brain"></i> ML/TinyML</span>
+                    <span class="role-badge"><i class="fas fa-plug"></i> Electronics</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container fade-up">
-                <div class="hero-content">
-                    <div class="hero-tagline">✦ Engineer / Developer / Researcher</div>
-                    <h1>Liza Quant</h1>
-                    <div class="hero-slogan">Building intelligent systems where hardware meets algorithms. Pushing boundaries of signal processing and embedded AI.</div>
-                    <div class="btn-group" id="temp">
-                        <a href="#projects" class="btn-primary">Мои проекты</a>
-                        <a href="#contact" class="btn-outline">Связаться со мной</a>
-                    </div>
+    <!-- Projects Section (completed + current) -->
+    <div class="pass-card fade-up-pass" id="projects-pass">
+        <div class="section-title-pass">⚙️ Projects · Completed</div>
+        <div class="projects-grid-pass">
+            <div class="project-ticket">
+                <div style="font-weight: 800; font-size: 1.2rem;">NeuroSignal Processor</div>
+                <div class="tech-stack"><i class="fas fa-tag"></i> Python · SciPy · TensorFlow</div>
+                <p style="margin: 0.5rem 0; font-size: 0.9rem;">Real‑time EEG classification with 92% accuracy, deployed in clinical research.</p>
+                <div style="display: flex; justify-content: space-between; margin-top: 0.8rem;">
+                    <span><i class="fab fa-github"></i> repo</span>
+                    <a href="#" style="color: var(--accent); text-decoration: none;" onclick="alert('github.com/lizaquant/neuralpass'); return false;">Подробнее →</a>
                 </div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <div class="container fade-up">
-                <h2 class="section-title">About me</h2>
-                <div class="about-grid">
-                    <div>
-                        <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1rem;">I'm Liza, R&D engineer with deep focus on <strong>embedded electronics, real‑time signal analysis, and software architecture</strong>. Currently working on edge AI pipelines and low‑latency sensor fusion.</p>
-                        <p style="color: var(--text-muted);">Passionate about bridging theoretical research and practical prototypes. Experienced in full development cycle: from PCB design to C++/Python firmware, from data exploration to deployment.</p>
-                    </div>
-                    <div>
-                        <h3 style="margin-bottom: 1rem; font-weight: 600;">Core competencies</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge"><i class="fas fa-microchip"></i> Embedded</span>
-                            <span class="skill-badge"><i class="fas fa-chart-line"></i> Signal Analysis</span>
-                            <span class="skill-badge"><i class="fas fa-code"></i> Python / C++</span>
-                            <span class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</span>
-                            <span class="skill-badge"><i class="fas fa-waveform"></i> DSP</span>
-                            <span class="skill-badge"><i class="fas fa-database"></i> Data Engineering</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="project-ticket">
+                <div style="font-weight: 800; font-size: 1.2rem;">Embedded Control Unit</div>
+                <div class="tech-stack">STM32 · FreeRTOS · CAN</div>
+                <p style="margin: 0.5rem 0; font-size: 0.9rem;">High‑precision motor controller with predictive maintenance logging.</p>
+                <div><span><i class="fas fa-microchip"></i> hardware validated</span></div>
             </div>
-        </section>
-
-        <!-- Projects Section (Completed + Current) -->
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title fade-up">Projects</h2>
-                
-                <!-- Completed projects -->
-                <div class="fade-up"><h3 style="margin-bottom: 1.5rem; font-weight: 600;">✓ Завершённые проекты</h3></div>
-                <div class="projects-grid">
-                    <div class="project-card fade-up">
-                        <div class="project-title">NeuroSignal Processor</div>
-                        <div class="project-tech">Python · SciPy · TensorFlow</div>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Real‑time EEG classification pipeline with artifact removal and seizure prediction accuracy >92%.</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem;">
-                            <span><i class="fab fa-github" style="color: var(--accent);"></i> GitHub</span>
-                            <a href="#" class="btn-outline" style="padding: 0.3rem 1rem; font-size: 0.8rem;" onclick="alert('Repo demo: github.com/lizaquant/neurosignal'); return false;">Подробнее</a>
-                        </div>
-                    </div>
-                    <div class="project-card fade-up">
-                        <div class="project-title">Embedded Control Unit</div>
-                        <div class="project-tech">STM32 · C++ · FreeRTOS</div>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">High‑precision motor controller with CAN bus and predictive maintenance logs.</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem;">
-                            <span><i class="fas fa-microchip"></i> Hardware</span>
-                            <a href="#" class="btn-outline" style="padding: 0.3rem 1rem; font-size: 0.8rem;" onclick="alert('Case study and schematics available on request'); return false;">Подробнее</a>
-                        </div>
-                    </div>
-                    <div class="project-card fade-up">
-                        <div class="project-title">Sensor Data Studio</div>
-                        <div class="project-tech">React · D3 · WebSocket</div>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Interactive dashboard for multi‑sensor telemetry with real‑time anomaly detection.</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem;">
-                            <span><i class="fab fa-github"></i> Frontend repo</span>
-                            <a href="#" class="btn-outline" style="padding: 0.3rem 1rem; font-size: 0.8rem;" onclick="alert('Live demo: sensorstudio.vercel.app'); return false;">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Current projects with progress -->
-                <div class="fade-up"><h3 style="margin: 2rem 0 1.5rem; font-weight: 600;">⚡ Текущие проекты (Research & Development)</h3></div>
-                <div class="projects-grid">
-                    <div class="project-card fade-up">
-                        <span class="status-badge"><i class="fas fa-sync-alt"></i> in progress · 75%</span>
-                        <div class="project-title">Neural Anomaly Detector</div>
-                        <div class="project-tech">PyTorch · Kafka · Edge</div>
-                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Federated learning for predictive maintenance in industrial sensors.</p>
-                        <div class="progress-container"><div class="progress-fill" style="width: 75%;"></div></div>
-                        <div style="margin-top: 0.5rem;"><i class="fas fa-chart-simple"></i> beta testing Q3 2025</div>
-                    </div>
-                    <div class="project-card fade-up">
-                        <span class="status-badge"><i class="fas fa-microchip"></i> prototyping · 40%</span>
-                        <div class="project-title">Edge AI Platform</div>
-                        <div class="project-tech">TensorFlow Lite · Rust · RISC-V</div>
-                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Ultra‑low power inference for wearable health monitoring.</p>
-                        <div class="progress-container"><div class="progress-fill" style="width: 40%;"></div></div>
-                        <div style="margin-top: 0.5rem;"><i class="fas fa-flask"></i> research collaboration</div>
-                    </div>
-                </div>
+            <div class="project-ticket">
+                <div style="font-weight: 800; font-size: 1.2rem;">Sensor Data Studio</div>
+                <div class="tech-stack">React · D3 · WebSocket</div>
+                <p style="margin: 0.5rem 0; font-size: 0.9rem;">Interactive dashboard for anomaly detection in IIoT.</p>
+                <div><a href="#" style="color: var(--accent);" onclick="alert('demo: sensordash.vercel.app'); return false;">live demo →</a></div>
             </div>
-        </section>
+        </div>
 
-        <!-- Achievements Section (timeline/cards) -->
-        <section id="achievements">
-            <div class="container fade-up">
-                <h2 class="section-title">Achievements</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
-                        <div><strong>🏅 Winner of Intel AI Hackathon 2024</strong><br>Edge computer vision challenge — real‑time object detection on OpenVINO.</div>
-                    </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-file-alt"></i></div>
-                        <div><strong>📄 Published paper — IEEE ICASSP 2023</strong><br>"Adaptive filtering for non‑stationary biomedical signals".</div>
-                    </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-medal"></i></div>
-                        <div><strong>🥇 1st place — Russian Robotics Olympiad (2022)</strong><br>Autonomous navigation with sensor fusion.</div>
-                    </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-chalkboard-user"></i></div>
-                        <div><strong>🎤 Speaker at HighLoad++ 2024</strong><br>Talk: "Low‑latency streaming analytics for IIoT".</div>
-                    </div>
-                </div>
+        <div style="margin: 2rem 0 1rem 0;"><span class="section-title-pass" style="font-size: 1.4rem;">🔄 Current R&D (in progress)</span></div>
+        <div class="projects-grid-pass">
+            <div class="project-ticket">
+                <div><span style="background: var(--accent-light); padding: 0.2rem 0.6rem; border-radius: 30px; font-size: 0.7rem;">active · 75%</span></div>
+                <div style="font-weight: 700;">Neural Anomaly Detector</div>
+                <div class="tech-stack">PyTorch · Kafka · Edge</div>
+                <div class="progress-pass"><div class="progress-fill-pass" style="width: 75%;"></div></div>
+                <div style="font-size: 0.8rem;">federated learning for predictive maintenance</div>
             </div>
-        </section>
-
-        <!-- Titles / Badges -->
-        <section id="titles">
-            <div class="container fade-up">
-                <h2 class="section-title">Titles & Status</h2>
-                <div class="titles-wrapper">
-                    <div class="title-badge"><i class="fas fa-microchip"></i> Engineer</div>
-                    <div class="title-badge"><i class="fas fa-flask"></i> Researcher</div>
-                    <div class="title-badge"><i class="fas fa-code"></i> Developer</div>
-                    <div class="title-badge"><i class="fas fa-chart-line"></i> Signal Specialist</div>
-                    <div class="title-badge"><i class="fas fa-robot"></i> AI Enthusiast</div>
-                </div>
+            <div class="project-ticket">
+                <div><span style="background: var(--accent-light); padding: 0.2rem 0.6rem; border-radius: 30px; font-size: 0.7rem;">prototype · 40%</span></div>
+                <div style="font-weight: 700;">Edge AI Platform</div>
+                <div class="tech-stack">TFLite · Rust · RISC-V</div>
+                <div class="progress-pass"><div class="progress-fill-pass" style="width: 40%;"></div></div>
+                <div style="font-size: 0.8rem;">ultra‑low power wearables</div>
             </div>
-        </section>
+        </div>
+        <div class="barcode-sim" style="margin-top: 1rem; opacity: 0.2;"></div>
+    </div>
 
-        <!-- Contact + form -->
-        <section id="contact">
-            <div class="container fade-up">
-                <h2 class="section-title">Let’s connect</h2>
-                <div class="contact-row">
-                    <div class="contact-info">
-                        <a href="mailto:liza.quant@engineer.com" class="contact-link"><i class="fas fa-envelope"></i> liza.quant@engineer.com</a>
-                        <a href="#" class="contact-link"><i class="fab fa-github"></i> github.com/lizaquant</a>
-                        <a href="#" class="contact-link"><i class="fab fa-telegram"></i> @liza_quant</a>
-                        <a href="#" class="contact-link"><i class="fab fa-linkedin"></i> linkedin.com/in/liza-quant</a>
-                        <div style="margin-top: 1rem; background: var(--accent-soft); border-radius: 32px; padding: 0.8rem 1.2rem;">
-                            <i class="fas fa-map-pin"></i> Open for collaborations & research talks
-                        </div>
-                    </div>
-                    <div>
-                        <form id="contactForm">
-                            <div class="form-group"><input type="text" placeholder="Your name" id="formName" required></div>
-                            <div class="form-group"><input type="email" placeholder="Email address" id="formEmail" required></div>
-                            <div class="form-group"><textarea rows="3" placeholder="Tell me about your idea / question" id="formMsg" required></textarea></div>
-                            <button type="submit">Send message <i class="fas fa-paper-plane"></i></button>
-                        </form>
-                        <p id="formFeedback" style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);"></p>
-                    </div>
-                </div>
+    <!-- Achievements timeline style -->
+    <div class="pass-card fade-up-pass" id="achievements-pass">
+        <div class="section-title-pass">🏆 Achievements & Honors</div>
+        <div class="achievement-timeline">
+            <div class="achi-item"><i class="fas fa-trophy" style="color: var(--accent); font-size: 1.4rem;"></i> <div><strong>Winner, Intel AI Hackathon 2024</strong> — edge vision challenge</div></div>
+            <div class="achi-item"><i class="fas fa-file-alt" style="color: var(--accent);"></i> <div><strong>IEEE ICASSP 2023 publication</strong> — "Adaptive filtering for biomedical signals"</div></div>
+            <div class="achi-item"><i class="fas fa-medal" style="color: var(--accent);"></i> <div><strong>1st place — Russian Robotics Olympiad 2022</strong> (autonomous navigation)</div></div>
+            <div class="achi-item"><i class="fas fa-chalkboard-user"></i> <div><strong>Speaker @ HighLoad++ 2024</strong> — low‑latency streaming analytics</div></div>
+        </div>
+    </div>
+
+    <!-- Titles / Statuses as badges -->
+    <div class="pass-card fade-up-pass">
+        <div class="section-title-pass">🪪 Titles / Status</div>
+        <div class="badge-list">
+            <span class="role-badge"><i class="fas fa-microchip"></i> Engineer</span>
+            <span class="role-badge"><i class="fas fa-flask"></i> Researcher</span>
+            <span class="role-badge"><i class="fas fa-code"></i> Developer</span>
+            <span class="role-badge"><i class="fas fa-chart-line"></i> Signal Specialist</span>
+            <span class="role-badge"><i class="fas fa-robot"></i> AI Architect</span>
+            <span class="role-badge"><i class="fas fa-shield-alt"></i> Embedded Security</span>
+        </div>
+    </div>
+
+    <!-- Contact (with form + digital pass info) -->
+    <div class="pass-card fade-up-pass" id="contact-pass">
+        <div class="section-title-pass">📡 Contact / Reach out</div>
+        <div class="contact-pass">
+            <div>
+                <div class="contact-item" style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 28px; color: var(--accent);"></i> <a href="mailto:liza.quant@techpass.io" style="color: inherit; text-decoration: none;">liza.quant@techpass.io</a></div>
+                <div class="contact-item" style="margin-bottom: 1rem;"><i class="fab fa-github"></i> <a href="#" style="color: inherit;">github.com/lizaquant</a></div>
+                <div class="contact-item" style="margin-bottom: 1rem;"><i class="fab fa-telegram"></i> @liza_quant</div>
+                <div class="contact-item" style="margin-bottom: 1rem;"><i class="fab fa-linkedin"></i> linkedin.com/in/liza-quant</div>
+                <div class="barcode-sim" style="margin-top: 1.5rem;"></div>
+                <div style="font-family: monospace; font-size: 0.7rem; margin-top: 0.8rem;">PASS ID: LQ-8246 // SCAN FOR CHIP</div>
             </div>
-        </section>
-        <footer>
-            <div class="container">© 2025 Liza Quant — minimal portfolio • built with curiosity & clean code</div>
-        </footer>
-    </main>
+            <div>
+                <form id="passForm">
+                    <div style="margin-bottom: 1rem;"><input type="text" placeholder="Full name" id="passName" required></div>
+                    <div style="margin-bottom: 1rem;"><input type="email" placeholder="Email" id="passEmail" required></div>
+                    <div style="margin-bottom: 1rem;"><textarea rows="3" placeholder="Your message / collaboration idea" id="passMsg"></textarea></div>
+                    <button type="submit">Send secure request <i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div id="passFormFeedback" style="margin-top: 0.8rem; font-size: 0.8rem;"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>✧ LIZA QUANT · TECH PASS PORTFOLIO ✧</span>  |  minimal event badge edition  •  all signals green
+    </footer>
+</div>
 
-    <script>
-        // Dark mode toggle
-        const toggleBtn = document.getElementById('darkmode-toggle');
-        const icon = toggleBtn.querySelector('i');
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.body.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                document.body.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            setTheme('dark');
-        } else if (savedTheme === 'light') {
-            setTheme('light');
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
+<script>
+    // Dark mode toggle
+    const toggle = document.getElementById('darkTogglePass');
+    const iconMode = toggle.querySelector('i');
+    function setDarkMode(isDark) {
+        if (isDark) {
+            document.body.classList.add('dark');
+            localStorage.setItem('passTheme', 'dark');
+            iconMode.classList.remove('fa-moon');
+            iconMode.classList.add('fa-sun');
         } else {
-            setTheme('light');
+            document.body.classList.remove('dark');
+            localStorage.setItem('passTheme', 'light');
+            iconMode.classList.remove('fa-sun');
+            iconMode.classList.add('fa-moon');
         }
-        toggleBtn.addEventListener('click', () => {
-            if (document.body.classList.contains('dark')) setTheme('light');
-            else setTheme('dark');
-        });
+    }
+    const savedTheme = localStorage.getItem('passTheme');
+    if (savedTheme === 'dark') setDarkMode(true);
+    else if (savedTheme === 'light') setDarkMode(false);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setDarkMode(true);
+    else setDarkMode(false);
 
-        // Intersection Observer for fade-in animations
-        const fadeElements = document.querySelectorAll('.fade-up');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('appear');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-        fadeElements.forEach(el => observer.observe(el));
+    toggle.addEventListener('click', () => {
+        if (document.body.classList.contains('dark')) setDarkMode(false);
+        else setDarkMode(true);
+    });
 
-        // Form handler (fake submit with nice feedback)
-        const contactForm = document.getElementById('contactForm');
-        const feedbackP = document.getElementById('formFeedback');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('formName').value.trim();
-            const email = document.getElementById('formEmail').value.trim();
-            const msg = document.getElementById('formMsg').value.trim();
-            if (!name || !email || !msg) {
-                feedbackP.innerHTML = '❌ Please fill all fields.';
-                feedbackP.style.color = '#e06c75';
-                setTimeout(() => feedbackP.innerHTML = '', 2500);
-                return;
+    // Intersection Observer for fade-up-pass
+    const fadeElements = document.querySelectorAll('.fade-up-pass');
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                obs.unobserve(entry.target);
             }
-            feedbackP.innerHTML = `✨ Thanks ${name}! Liza will reach out soon.`;
-            feedbackP.style.color = 'var(--accent)';
-            contactForm.reset();
-            setTimeout(() => feedbackP.innerHTML = '', 3500);
         });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => obs.observe(el));
 
-        // subtle smooth behavior for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if(targetId === "#") return;
-                const targetElem = document.querySelector(targetId);
-                if(targetElem) {
-                    e.preventDefault();
-                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+    // Form handler
+    const contactFormPass = document.getElementById('passForm');
+    const feedbackSpan = document.getElementById('passFormFeedback');
+    contactFormPass.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('passName').value.trim();
+        const email = document.getElementById('passEmail').value.trim();
+        const msg = document.getElementById('passMsg').value.trim();
+        if (!name || !email || !msg) {
+            feedbackSpan.innerHTML = '⚠️ All fields required for pass request.';
+            feedbackSpan.style.color = '#e06c75';
+            setTimeout(() => feedbackSpan.innerHTML = '', 2500);
+            return;
+        }
+        feedbackSpan.innerHTML = `✔️ Thank you, ${name}. Your message was transmitted — Liza will reply within 24h.`;
+        feedbackSpan.style.color = 'var(--accent)';
+        contactFormPass.reset();
+        setTimeout(() => feedbackSpan.innerHTML = '', 4000);
+    });
+
+    // smooth anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#") return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
