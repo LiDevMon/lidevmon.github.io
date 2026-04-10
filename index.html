@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Liza Quant · Engineer & Developer</title>
+    <!-- Google Fonts + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            transition: background-color 0.3s ease, color 0.2s ease;
+            scroll-behavior: smooth;
+        }
+
+        /* CSS Variables (Light mode default) */
+        :root {
+            --bg-primary: #fbfcfd;
+            --bg-secondary: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.96);
+            --text-primary: #11181c;
+            --text-secondary: #2c3e42;
+            --text-muted: #5b6e72;
+            --border-light: rgba(0, 0, 0, 0.06);
+            --accent: #2d7a8c;
+            --accent-soft: #eef5f7;
+            --accent-glow: rgba(45, 122, 140, 0.12);
+            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 20px 30px -12px rgba(0, 0, 0, 0.05);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --progress-bg: #e2e8f0;
+        }
+
+        body.dark {
+            --bg-primary: #0a0c10;
+            --bg-secondary: #12141c;
+            --card-bg: rgba(18, 20, 28, 0.95);
+            --text-primary: #edf2f7;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-light: rgba(255, 255, 255, 0.06);
+            --accent: #6bb5c7;
+            --accent-soft: #1f2a32;
+            --accent-glow: rgba(107, 181, 199, 0.15);
+            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 20px 30px -12px rgba(0, 0, 0, 0.6);
+            --glass-bg: rgba(18, 20, 28, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --progress-bg: #2d3748;
+        }
+
+        /* glassmorphism header */
+        .glass-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(14px);
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.2s;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* navigation */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--accent) 0%, #4699ae 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: var(--accent-soft);
+            border: none;
+            border-radius: 40px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            transition: all 0.2s ease;
+        }
+
+        /* sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0 3rem;
+        }
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        .hero-slogan {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 2rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background: #236b7a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -12px var(--accent-glow);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-outline:hover {
+            background: var(--accent-soft);
+            transform: translateY(-2px);
+        }
+
+        /* about grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+        .skill-badge {
+            background: var(--accent-soft);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* projects cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 1.6rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all 0.25s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-glow);
+        }
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .project-tech {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin: 0.5rem 0 1rem;
+            letter-spacing: -0.2px;
+        }
+        .progress-container {
+            background: var(--progress-bg);
+            border-radius: 40px;
+            height: 8px;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        .progress-fill {
+            background: var(--accent);
+            width: 0%;
+            height: 8px;
+            border-radius: 40px;
+        }
+        .status-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: var(--accent-soft);
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        /* achievements as timeline / cards */
+        .achievements-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .achievement-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+            background: var(--card-bg);
+            padding: 1.2rem 1.6rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+        .achievement-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        /* titles badges */
+        .titles-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .title-badge {
+            background: var(--card-bg);
+            border-radius: 80px;
+            padding: 0.8rem 1.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1rem;
+            border: 1px solid var(--border-light);
+            backdrop-filter: blur(4px);
+            transition: 0.15s;
+        }
+        .title-badge i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* contacts row */
+        .contact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: 0.2s;
+        }
+        .contact-link i {
+            width: 32px;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        .contact-link:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            font-family: inherit;
+            color: var(--text-primary);
+            transition: 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        button[type="submit"] {
+            background: var(--accent);
+            border: none;
+            padding: 0.9rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        /* fade-in animation on scroll */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+        }
+        .fade-up.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .about-grid, .contact-row {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .btn-group a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-header">
+        <div class="container">
+            <div class="nav-bar">
+                <div class="logo">Liza Quant</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#contact">Contact</a>
+                    <button class="theme-toggle" id="darkmode-toggle" aria-label="Dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container fade-up">
+                <div class="hero-content">
+                    <div class="hero-tagline">✦ Engineer / Developer / Researcher</div>
+                    <h1>Liza Quant</h1>
+                    <div class="hero-slogan">Building intelligent systems where hardware meets algorithms. Pushing boundaries of signal processing and embedded AI.</div>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn-primary">Мои проекты</a>
+                        <a href="#contact" class="btn-outline">Связаться со мной</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container fade-up">
+                <h2 class="section-title">About me</h2>
+                <div class="about-grid">
+                    <div>
+                        <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1rem;">I'm Liza, R&D engineer with deep focus on <strong>embedded electronics, real‑time signal analysis, and software architecture</strong>. Currently working on edge AI pipelines and low‑latency sensor fusion.</p>
+                        <p style="color: var(--text-muted);">Passionate about bridging theoretical research and practical prototypes. Experienced in full development cycle: from PCB design to C++/Python firmware, from data exploration to deployment.</p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 1rem; font-weight: 600;">Core competencies</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge"><i class="fas fa-microchip"></i> Embedded</span>
+                            <span class="skill-badge"><i class="fas fa-chart-line"></i> Signal Analysis</span>
+                            <span class="skill-badge"><i class="fas fa-code"></i> Python / C++</span>
+                            <span class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</span>
+                            <span class="skill-badge"><i class="fas fa-waveform"></i> DSP</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> Data Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Completed + Current) -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title fade-up">Projects</h2>
+                
+                <!-- Completed projects -->
+                <div class="fade-up"><h3 style="margin-bottom: 1.5rem; font-weight: 600;">✓ Завершённые проекты</h3></div>
+                <div class="projects-grid">
+                    <div class="project-card fade-up">
+                        <div class="project-title">NeuroSignal Processor</div>
+                        <div class="project-tech">Python · SciPy · TensorFlow</div>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Real‑time EEG classification pipeline with artifact removal and seizure prediction accuracy >92%.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem;">
+                            <span><i class="fab fa-github" style="color: var(--accent);"></i> GitHub</span>
+                            <a href="#" class="btn-outline" style="padding: 0.3rem 1rem; font-size: 0.8rem;" onclick="alert('Repo demo: github.com/lizaquant/neurosignal'); return false;">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-up">
+                        <div class="project-title">Embedded Control Unit</div>
+                        <div class="project-tech">STM32 · C++ · FreeRTOS</div>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">High‑precision motor controller with CAN bus and predictive maintenance logs.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem;">
+                            <span><i class="fas fa-microchip"></i> Hardware</span>
+                            <a href="#" class="btn-outline" style="padding: 0.3rem 1rem; font-size: 0.8rem;" onclick="alert('Case study and schematics available on request'); return false;">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-up">
+                        <div class="project-title">Sensor Data Studio</div>
+                        <div class="project-tech">React · D3 · WebSocket</div>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Interactive dashboard for multi‑sensor telemetry with real‑time anomaly detection.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem;">
+                            <span><i class="fab fa-github"></i> Frontend repo</span>
+                            <a href="#" class="btn-outline" style="padding: 0.3rem 1rem; font-size: 0.8rem;" onclick="alert('Live demo: sensorstudio.vercel.app'); return false;">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current projects with progress -->
+                <div class="fade-up"><h3 style="margin: 2rem 0 1.5rem; font-weight: 600;">⚡ Текущие проекты (Research & Development)</h3></div>
+                <div class="projects-grid">
+                    <div class="project-card fade-up">
+                        <span class="status-badge"><i class="fas fa-sync-alt"></i> in progress · 75%</span>
+                        <div class="project-title">Neural Anomaly Detector</div>
+                        <div class="project-tech">PyTorch · Kafka · Edge</div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Federated learning for predictive maintenance in industrial sensors.</p>
+                        <div class="progress-container"><div class="progress-fill" style="width: 75%;"></div></div>
+                        <div style="margin-top: 0.5rem;"><i class="fas fa-chart-simple"></i> beta testing Q3 2025</div>
+                    </div>
+                    <div class="project-card fade-up">
+                        <span class="status-badge"><i class="fas fa-microchip"></i> prototyping · 40%</span>
+                        <div class="project-title">Edge AI Platform</div>
+                        <div class="project-tech">TensorFlow Lite · Rust · RISC-V</div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Ultra‑low power inference for wearable health monitoring.</p>
+                        <div class="progress-container"><div class="progress-fill" style="width: 40%;"></div></div>
+                        <div style="margin-top: 0.5rem;"><i class="fas fa-flask"></i> research collaboration</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section (timeline/cards) -->
+        <section id="achievements">
+            <div class="container fade-up">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                        <div><strong>🏅 Winner of Intel AI Hackathon 2024</strong><br>Edge computer vision challenge — real‑time object detection on OpenVINO.</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon"><i class="fas fa-file-alt"></i></div>
+                        <div><strong>📄 Published paper — IEEE ICASSP 2023</strong><br>"Adaptive filtering for non‑stationary biomedical signals".</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                        <div><strong>🥇 1st place — Russian Robotics Olympiad (2022)</strong><br>Autonomous navigation with sensor fusion.</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon"><i class="fas fa-chalkboard-user"></i></div>
+                        <div><strong>🎤 Speaker at HighLoad++ 2024</strong><br>Talk: "Low‑latency streaming analytics for IIoT".</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Titles / Badges -->
+        <section id="titles">
+            <div class="container fade-up">
+                <h2 class="section-title">Titles & Status</h2>
+                <div class="titles-wrapper">
+                    <div class="title-badge"><i class="fas fa-microchip"></i> Engineer</div>
+                    <div class="title-badge"><i class="fas fa-flask"></i> Researcher</div>
+                    <div class="title-badge"><i class="fas fa-code"></i> Developer</div>
+                    <div class="title-badge"><i class="fas fa-chart-line"></i> Signal Specialist</div>
+                    <div class="title-badge"><i class="fas fa-robot"></i> AI Enthusiast</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact + form -->
+        <section id="contact">
+            <div class="container fade-up">
+                <h2 class="section-title">Let’s connect</h2>
+                <div class="contact-row">
+                    <div class="contact-info">
+                        <a href="mailto:liza.quant@engineer.com" class="contact-link"><i class="fas fa-envelope"></i> liza.quant@engineer.com</a>
+                        <a href="#" class="contact-link"><i class="fab fa-github"></i> github.com/lizaquant</a>
+                        <a href="#" class="contact-link"><i class="fab fa-telegram"></i> @liza_quant</a>
+                        <a href="#" class="contact-link"><i class="fab fa-linkedin"></i> linkedin.com/in/liza-quant</a>
+                        <div style="margin-top: 1rem; background: var(--accent-soft); border-radius: 32px; padding: 0.8rem 1.2rem;">
+                            <i class="fas fa-map-pin"></i> Open for collaborations & research talks
+                        </div>
+                    </div>
+                    <div>
+                        <form id="contactForm">
+                            <div class="form-group"><input type="text" placeholder="Your name" id="formName" required></div>
+                            <div class="form-group"><input type="email" placeholder="Email address" id="formEmail" required></div>
+                            <div class="form-group"><textarea rows="3" placeholder="Tell me about your idea / question" id="formMsg" required></textarea></div>
+                            <button type="submit">Send message <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p id="formFeedback" style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">© 2025 Liza Quant — minimal portfolio • built with curiosity & clean code</div>
+        </footer>
+    </main>
+
+    <script>
+        // Dark mode toggle
+        const toggleBtn = document.getElementById('darkmode-toggle');
+        const icon = toggleBtn.querySelector('i');
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            setTheme('dark');
+        } else if (savedTheme === 'light') {
+            setTheme('light');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+        toggleBtn.addEventListener('click', () => {
+            if (document.body.classList.contains('dark')) setTheme('light');
+            else setTheme('dark');
+        });
+
+        // Intersection Observer for fade-in animations
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Form handler (fake submit with nice feedback)
+        const contactForm = document.getElementById('contactForm');
+        const feedbackP = document.getElementById('formFeedback');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const msg = document.getElementById('formMsg').value.trim();
+            if (!name || !email || !msg) {
+                feedbackP.innerHTML = '❌ Please fill all fields.';
+                feedbackP.style.color = '#e06c75';
+                setTimeout(() => feedbackP.innerHTML = '', 2500);
+                return;
+            }
+            feedbackP.innerHTML = `✨ Thanks ${name}! Liza will reach out soon.`;
+            feedbackP.style.color = 'var(--accent)';
+            contactForm.reset();
+            setTimeout(() => feedbackP.innerHTML = '', 3500);
+        });
+
+        // subtle smooth behavior for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === "#") return;
+                const targetElem = document.querySelector(targetId);
+                if(targetElem) {
+                    e.preventDefault();
+                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
